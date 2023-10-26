@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header row">
         <img src="./images/location.png" class="header__image" alt="an image of a map and location">
         <h1 class="header__title">GeoTagApp</h1>
         <nav class="header__navigation">
@@ -21,27 +21,29 @@
         </nav>
     </header>
 
-    <main class="main">
-        <section class="main__tagging tagging">
-            <h2>Tagging</h2>
+    <main class="main row">
+        <section class="main__tagging tagging col-1">
 
+           <h2>Tagging</h2>
+            
             <!-- ############### VS1Lab 1a Form 1 Start -->
             <form id="tag-form" action="/tagging" method="post">
-
                 <fieldset>
                     <legend>Add a new GeoTag</legend>
-                Latitude: <input type="text" placeholder="49.01379" id="latitude">
-                Longitude: <input type="text" placeholder="8.390071" id="longitude">
-                Name: <input type="text" placeholder="e.g. Central Berlin" id="name" maxlength="10" required>
-                Hashtag: <input type="text" placeholder="e.g. #ber" id="hashtag" pattern="#[A-Za-z0-9_]+"maxlength="11">
+                    <div>Latitude: <input type="text" placeholder="49.01379" id="latitude" disabled></div>
+                    <div>Longitude: <input type="text" placeholder="8.390071" id="longitude" disabled></div>
+                    <div>Name: <input type="text" placeholder="e.g. Central Berlin" id="name" maxlength="10" required></div>
+                    <div>Hashtag: <input type="text" placeholder="e.g. #ber" id="hashtag" pattern="#[A-Za-z0-9_]+"maxlength="11"></div>
                 <input type="submit" name="submit" value="Add Tag" id="addtag"/>
                 </fieldset>
             </form>
+
+         </div></section>
             <!-- ############### VS1Lab 1a Form 1 End -->
 
         </section>
 
-        <section class="main__discovery discovery">
+        <section class="main__discovery discovery col-9">
             <h2 class="discovery__title">Discovery</h2>
 
             <!-- ############### VS1Lab 1a Form 2 Start -->
@@ -49,7 +51,7 @@
 
                 <fieldset>
                     <legend>Search</legend>
-                Search term or keywords: <input type="text" placeholder="e.g. Berlin" id="termkey">
+                Search term or keywords: <input type="text" placeholder="e.g. Berlin" id="termkey" disabled>
                 <input type="submit" name="submit" value="Search" id="addtag"/>
                 </fieldset>
 

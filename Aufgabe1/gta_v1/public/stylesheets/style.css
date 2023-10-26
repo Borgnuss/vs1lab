@@ -46,7 +46,9 @@ a {
 
 /* ### TODO ### Styles for other HTML elements */
 
-/* COOOOOOOOODDDEEEEEE
+  /* COOOOOOOOODDDEEEEEE*/
+  
+   
 
 
 /* Grid styles (no changes required) */
@@ -109,28 +111,78 @@ a {
 
 /* ### TODO ### Styles for Header Component */
 
-/* ... your code here ... */
 
+
+.header{
+  background-color:var(--background-color);
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 50px;
+}
+.discovery__map{
+  float:right;
+}
+
+.header__image{
+  width: 50px;
+  height: 45px;
+}
 
 /* ### TODO ### Styles for Main Component */
 
-/* ... your code here ... */
+
 
 
 /* ### TODO ### Styles for Tagging component */
 
-/* ... your code here ... */
+#latitude{
+  display: block;
+  border-color: var(--border-color);
+  background-color: var(--background-color);
+  
+}
+#longitude{
+  display: block;
+}
+#name{
+  display: block;
+}
+#hashtag{
+  display: block;
+}
+
 
 
 /* ### TODO ### Styles for Discovery component */
 
-/* ... your code here ... */
 
+legend{
+  display: block;
+}
+#termkey{
+  display: block;
+}
+#addtag{
+  display: block;
+}
 
 /* ### TODO ### Styles for Footer Component */
 
-/* ... your code here ... */
+.footer{
+  background-color: var(--background-color);
+  height:100px;
+}
+.footer span{
+  padding-left: 50px;
+  padding-top: 50px;
+}
 
+span{
+  display: block;
+}
 
 /* ### TODO ### Media Queries */
 
