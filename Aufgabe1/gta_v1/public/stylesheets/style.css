@@ -133,16 +133,23 @@ a {
 
 /* ### TODO ### Styles for Main Component */
 
-
+.main{
+  max-width: 850px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
 
 /* ### TODO ### Styles for Tagging component */
 
+
+.field_tagging{
+  padding: 20px;
+  border-color: var(--border-color);
+}
 #latitude{
   display: block;
-  border-color: var(--border-color);
-  background-color: var(--background-color);
-  
 }
 #longitude{
   display: block;
@@ -153,12 +160,29 @@ a {
 #hashtag{
   display: block;
 }
-
-
+input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+h2 {
+  margin-bottom: 15px;
+}
+#addtag {
+  margin-top: 20px;
+  width: 185px;
+  background-color: rgb(244, 244, 244);
+  text-align: center;
+  border: 2px solid #e2e2e2;
+}
 
 /* ### TODO ### Styles for Discovery component */
 
 
+.field_discovery{
+  padding: 10px;
+  width: 700px;
+}
 legend{
   display: block;
 }
@@ -167,6 +191,32 @@ legend{
 }
 #addtag{
   display: block;
+}
+.discovery__wrapper{
+  width: 700px;
+}
+.discovery__map {
+  margin-top: 20px;
+}
+#discoveryResults {
+  margin-top: 20px;
+  color: var(--link-color);
+  list-style-type: none;
+  float: left;
+}
+
+.castle {
+  padding: 15px;
+  margin-bottom: 5px;
+}
+.iwi {
+  padding: 15px;
+}
+.iwi,.castle{
+  background-color: rgb(244, 244, 244);
+  width: 250px;
+  height: 75px;
+  text-align: left;
 }
 
 /* ### TODO ### Styles for Footer Component */

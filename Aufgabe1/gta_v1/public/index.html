@@ -22,18 +22,23 @@
     </header>
 
     <main class="main row">
-        <section class="main__tagging tagging col-1">
+        <section class="main__tagging tagging col-3">
 
            <h2>Tagging</h2>
             
             <!-- ############### VS1Lab 1a Form 1 Start -->
             <form id="tag-form" action="/tagging" method="post">
-                <fieldset>
+                <fieldset class="field_tagging">
                     <legend>Add a new GeoTag</legend>
-                    <div>Latitude: <input type="text" placeholder="49.01379" id="latitude" disabled></div>
-                    <div>Longitude: <input type="text" placeholder="8.390071" id="longitude" disabled></div>
-                    <div>Name: <input type="text" placeholder="e.g. Central Berlin" id="name" maxlength="10" required></div>
-                    <div>Hashtag: <input type="text" placeholder="e.g. #ber" id="hashtag" pattern="#[A-Za-z0-9_]+"maxlength="11"></div>
+                <label for="latitude">Latitude:</label>
+                    <input type="text" placeholder="49.01379" id="latitude" disabled>
+                <label for="longitude">Longitude:</label>  
+                    <input type="text" placeholder="8.390071" id="longitude" disabled>
+                <label for="name">Name:</label>
+                    <input type="text" placeholder="e.g. Central Berlin" id="name" maxlength="10" required>
+                <label for="hashtag">Hashtag:</label>
+                    <input type="text" placeholder="e.g. #ber" id="hashtag" pattern="#[A-Za-z0-9_]+"maxlength="11">
+                
                 <input type="submit" name="submit" value="Add Tag" id="addtag"/>
                 </fieldset>
             </form>
@@ -43,16 +48,16 @@
 
         </section>
 
-        <section class="main__discovery discovery col-9">
+        <section class="main__discovery discovery col-8">
             <h2 class="discovery__title">Discovery</h2>
 
             <!-- ############### VS1Lab 1a Form 2 Start -->
             <form class="discovery__search" id="discoveryFilterForm" action="/discovery" method="post">
 
-                <fieldset>
+                <fieldset class="field_discovery">
                     <legend>Search</legend>
                 Search term or keywords: <input type="text" placeholder="e.g. Berlin" id="termkey" disabled>
-                <input type="submit" name="submit" value="Search" id="addtag"/>
+                <input type="submit" name="submit" value="Search" id="addtag"disabled/>
                 </fieldset>
 
             </form>
@@ -60,12 +65,16 @@
 
             <div class="discovery__wrapper">
                 <div class="discovery__taglist">
-                    <ul class="discovery__results" id="discoveryResults">
-                        <li>Castle (49.01379, 8.404435) #sight</li>
-                        <li>IWI (49.01379, 8.390071) #edu</li>
+                    <ul class="discoveryresults" id="discoveryResults">
+                        <fieldset class="castle">
+                        <li>Castle (49.01379, 8.404435) <br> #sight</li>
+                        </fieldset>
+                        <fieldset class="iwi">
+                        <li>IWI (49.01379, 8.390071) <br> #edu</li>
+                        </fieldset>
+
                     </ul>
                 </div>
-
                 <div class="discovery__map">
                     <img src="./images/mapview.jpg" alt="a map with locations" id="mapView" />
                     <span>Result map</span>
