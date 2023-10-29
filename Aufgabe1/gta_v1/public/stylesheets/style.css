@@ -235,5 +235,36 @@ span{
 }
 
 /* ### TODO ### Media Queries */
-
+@media screen and (max-width:650px){
+  .row {
+    flex-direction: column;
+  }
+  .main{
+    margin-left: 50px;
+  }
+  .field_discovery{
+    width: 230px;
+  }
+  .discovery__wrapper{
+    width: 350px;
+  }
+  .main__discovery{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .header__title{
+    margin: 20px;
+  }
+  #discoveryResults{
+    margin-bottom: 50px;
+  }
+  .castle,.iwi{
+    width: 230px;
+  }
+  #mapView{
+    width: 350px;
+    height: 350px;
+    
+  }
+}
 /* ... your code here ... */
