@@ -148,10 +148,10 @@ a {
   padding: 20px;
   border-color: var(--border-color);
 }
-#latitude{
+#latitude_tagging{
   display: block;
 }
-#longitude{
+#longitude_tagging{
   display: block;
 }
 #name{
@@ -193,7 +193,7 @@ legend{
   display: block;
 }
 .discovery__wrapper{
-  width: 700px;
+  width: 870px;
 }
 .discovery__map {
   margin-top: 20px;
@@ -219,11 +219,11 @@ legend{
   text-align: left;
 }
 
-#hlatitude{
+#latitude_discovery{
   display: block;
   display: none;
 }
-#hlongitude{
+#longitude_discovery{
   display: block;
   display: none;
 }
@@ -271,7 +271,7 @@ span{
     width: 230px;
   }
   #mapView{
-    width: 350px;
+    width: 400px;
     height: 350px;
     
   }
