@@ -10,6 +10,8 @@
     <title>GeoTagApp</title>
     <link rel="stylesheet" href="./stylesheets/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
                 <label for="name">Name:</label>
                     <input type="text" placeholder="e.g. Central Berlin" id="name" maxlength="10" required>
                 <label for="hashtag">Hashtag:</label>
-                    <input type="text" placeholder="e.g. #ber" id="hashtag" pattern="#[A-Za-z0-9_]+"maxlength="10">
+                    <input type="text" placeholder="e.g. #ber" id="hashtag" pattern="#[A-Za-z0-9_]+"maxlength="11">
                 
                 <input type="submit" name="submit" value="Add Tag" id="addtag"/>
                 </fieldset>
@@ -89,6 +91,19 @@
     <footer class="footer">
         <span>(c) 2021/22 HKA_IWI_VSYS</span>
     </footer>
+    <script src="./javascripts/geotagging.js">
+        
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+   // x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+    getLocation();
+    </script>
+    
 </body>
 
 </html>
