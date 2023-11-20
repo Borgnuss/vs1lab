@@ -28,35 +28,38 @@
     </header>
 
 
-    <div class="main__wrapper">
-        <main class="main row">
-            <section class="main__tagging tagging col-3">
-                <h2>Tagging</h2>
+           <h2>Tagging</h2>
+            
+            <!-- ############### VS1Lab 1a Form 1 Start -->
+            <form id="tag-form" action="/tagging" method="post">
+                <fieldset class="field_tagging">
+                    <legend>Add a new GeoTag</legend>
+                <label for="latitude">Latitude:</label>
+                    <input type="text" placeholder="49.01379" id="latitude_tagging" disabled>
+                <label for="longitude">Longitude:</label>  
+                    <input type="text" placeholder="8.390071" id="longitude_tagging" disabled>
+                <label for="name">Name:</label>
+                    <input type="text" placeholder="e.g. Central Berlin" id="name" maxlength="10" required>
+                <label for="hashtag">Hashtag:</label>
+                    <input type="text" placeholder="e.g. #ber" id="hashtag" pattern="#[A-Za-z0-9_]+"maxlength="11">
+                
+                <input type="submit" name="submit" value="Add Tag" id="addtag"/>
+                </fieldset>
+            </form>
 
-                <!-- ############### VS1Lab 1a Form 1 Start -->
-                <form id="tag-form" action="/tagging" method="post">
+               
 
-                    <fieldset class="tagging__fieldset">
-
-                        <legend>Add a new GeoTag</legend>
-
-                            <label for="latitude_tagging">Latitude:</label>
-                            <input type="text" id="latitude_tagging" name="latitude_tagging" placeholder="49.01379" disabled>    
-        
-                            <label for="longitude_tagging">Longitude:</label>
-                            <input type="text" id="longitude_tagging" name="longitude_tagging" placeholder="8.390071" disabled>
-        
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" placeholder="e.g. Schloss Karlsruhe" required maxlength="10" pattern="[A-Za-z]+">
-        
-                            <label for="hashtag">Hashtag:</label>
-                            <input type="text" id="hashtag" name="hashtag" placeholder="e.g. #schloss" maxlength="11" pattern="#[A-Za-z]+">
-
-                            <input type="submit" value="Add Tag" >
+               <!-- <fieldset class="field_discovery">
+                    <legend>Search</legend>
+                Search term or keywords: <input type="text" placeholder="e.g. Berlin" id="termkey" disabled>
+                <input type="submit" name="submit" value="Search" id="addtag"disabled/>
+                <input type="text" placeholder="49.01379" id="latitude_discovery" hidden>
+                <input type="text" placeholder="8.390071" id="longitude_discovery" hidden>
+                </fieldset>
 
                     </fieldset>
 
-                </form>
+                </form>-->
                 <!-- ############### VS1Lab 1a Form 1 End -->
 
             </section>
@@ -123,7 +126,7 @@ function getLocation() {
   }
 }
 
-getLocation();
+updateLocation();
 
     </script>
 </body>
