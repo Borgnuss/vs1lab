@@ -29,7 +29,11 @@ const GeoTag = require('../models/geotag');
  * TODO: implement the module in the file "../models/geotag-store.js"
  */
 // eslint-disable-next-line no-unused-vars
-const GeoTagStore = require('../models/geotag-store');
+const InMemoryGeoTagStore = require('../models/geotag-store');
+const store = new InMemoryGeoTagStore();
+
+const GeoTagExamples = require('../models/geotag-examples');
+const examples = new GeoTagExamples();
 
 /**
  * Route '/' for HTTP 'GET' requests.
@@ -42,7 +46,8 @@ const GeoTagStore = require('../models/geotag-store');
 
 // TODO: extend the following route example if necessary
 router.get('/', (req, res) => {
-  res.render('index', { taglist: [] })
+  const { latitude, longitude } = req.query;
+  res.render('index', { taglist: GeoTagExamples.populateStore(store), latitude, longitude });
 });
 
 /**
@@ -61,6 +66,20 @@ router.get('/', (req, res) => {
  */
 
 // TODO: ... your code here ...
+router.post('/tagging', (req, res) => {
+  const { name, latitude_tagging, longitude_tagging, hashtag } = req.body;
+
+  const latitude = parseFloat(latitude_tagging);
+  const longitude = parseFloat(longitude_tagging);
+
+  console.log('POST /tagging route called');
+  const newGeoTag = new GeoTag(name, latitude, longitude, hashtag);
+  store.addGeoTag(newGeoTag);
+
+  const taggingResult = store.getNearbyGeoTags(latitude, longitude, 30);
+
+  res.render('index', { taglist: taggingResult, latitude: latitude, longitude: longitude });
+});
 
 /**
  * Route '/discovery' for HTTP 'POST' requests.
@@ -79,5 +98,18 @@ router.get('/', (req, res) => {
  */
 
 // TODO: ... your code here ...
+router.post('/discovery', (req, res) => {
+  const { latitude_discovery, longitude_discovery, searchterm } = req.body;
+
+  const latitude = parseFloat(latitude_discovery);
+  const longitude = parseFloat(longitude_discovery);
+
+  console.log('POST /discovery route called');
+  let discoverGeoTags = store.searchNearbyGeoTags(latitude, longitude, 30, searchterm);
+
+  res.render('index', { taglist: discoverGeoTags, latitude: latitude, longitude: longitude });
+});
 
 module.exports = router;
+// cd Aufgabe3/gta_v3
+// npm start
