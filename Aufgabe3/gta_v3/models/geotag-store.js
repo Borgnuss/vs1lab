@@ -50,8 +50,6 @@ class InMemoryGeoTagStore{
             const currentTag = this._geoTags[i];
 
             // Primitive Calculation of the distance.
-            // const distance = Math.sqrt(Math.pow(longitude - currentTag.getLatitude(), 2) + 
-            //                  Math.pow(currentTag.getLongitude() - latitude, 2));
 
             const distance = this.dist(latitude, longitude, currentTag.getLatitude(), currentTag.getLongitude());
 
@@ -85,7 +83,7 @@ class InMemoryGeoTagStore{
 
     dist(lat1, lon1, lat2, lon2) {
         // Calculaition of the distance concidering the curvature of the earth.
-        const R = 6371; // Earth radius in kilometers
+        const R = 6371; 
         const dLat = (lat2 - lat1) * (Math.PI / 180);
         const dLon = (lon2 - lon1) * (Math.PI / 180);
         const a =
@@ -97,13 +95,6 @@ class InMemoryGeoTagStore{
         return distance;
     }  
 
-    getAllGeoTags() {
-        let allGeoTags = [];
-        for (let i = 0; i < this._geoTags.length; i++) {
-            allGeoTags.push(this._geoTags[i]);
-        }
-        return allGeoTags;
-    }
 }
 
 module.exports = InMemoryGeoTagStore
