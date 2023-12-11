@@ -148,7 +148,12 @@ a {
   padding: 20px;
   border-color: var(--border-color);
 }
-
+#latitude{
+  display: block;
+}
+#longitude{
+  display: block;
+}
 #name{
   display: block;
 }
@@ -188,30 +193,19 @@ legend{
   display: block;
 }
 .discovery__wrapper{
-  width: 870px;
+  width: 700px;
 }
 .discovery__map {
   margin-top: 20px;
 }
-#discoveryResults {
-  margin-top: 20px;
+#discoveryResults li{
+  margin-top: 10px;
+  padding: 15px;
   color: var(--link-color);
   list-style-type: none;
   float: left;
-}
-
-.castle {
-  padding: 15px;
-  margin-bottom: 5px;
-}
-.iwi {
-  padding: 15px;
-}
-.iwi,.castle{
-  background-color: rgb(244, 244, 244);
-  width: 250px;
-  height: 75px;
-  text-align: left;
+  border-color: #666;
+  background-color: #efefef;
 }
 
 #latitude_discovery{
@@ -261,12 +255,11 @@ span{
   }
   #discoveryResults{
     margin-bottom: 50px;
-  }
-  .castle,.iwi{
     width: 230px;
   }
+  
   #mapView{
-    width: 400px;
+    width: 350px;
     height: 350px;
     
   }

@@ -111,5 +111,3 @@ router.post('/discovery', (req, res) => {
 });
 
 module.exports = router;
-// cd Aufgabe3/gta_v3
-// npm start

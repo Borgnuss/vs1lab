@@ -144,7 +144,7 @@ a {
 /* ### TODO ### Styles for Tagging component */
 
 
-.field_tagging{
+.tagging__fieldset{
   padding: 20px;
   border-color: var(--border-color);
 }
@@ -179,7 +179,7 @@ h2 {
 /* ### TODO ### Styles for Discovery component */
 
 
-.field_discovery{
+.discovery__fieldset{
   padding: 10px;
   width: 700px;
 }
@@ -198,31 +198,21 @@ legend{
 .discovery__map {
   margin-top: 20px;
 }
-#discoveryResults {
-  margin-top: 20px;
+#discoveryResults li{
+  margin-top: 10px;
+  padding: 15px;
   color: var(--link-color);
   list-style-type: none;
   float: left;
+  border-color: #666;
+  background-color: #efefef;
 }
 
-.castle {
-  padding: 15px;
-  margin-bottom: 5px;
-}
-.iwi {
-  padding: 15px;
-}
-.iwi,.castle{
-  background-color: rgb(244, 244, 244);
-  width: 250px;
-  height: 75px;
-  text-align: left;
-}
-#hlatitude{
+#latitude_discovery{
   display: block;
   display: none;
 }
-#hlongitude{
+#longitude_discovery{
   display: block;
   display: none;
 }
@@ -265,10 +255,9 @@ span{
   }
   #discoveryResults{
     margin-bottom: 50px;
-  }
-  .castle,.iwi{
     width: 230px;
   }
+  
   #mapView{
     width: 350px;
     height: 350px;

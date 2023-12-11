@@ -63,6 +63,19 @@ class LocationHelper {
  * A class to help using the MapQuest map service.
  */
 class MapManager {
+    /*
+     * MapQuest Zugangsdaten:
+     * E-Mail: vs1lab@existiert.net
+     * Code: ms_144e7fec4e6d165ba5f3c4668689e7ad74002074@existiert.net
+     * Username: vs1lab_mapquest
+     * Company: vs1lab
+     * Name: vs1
+     * Lastname: lab
+     * Password: 9T$.2aA2D;Hb~!^
+     * 
+     * Consumer Key: FtWHGJMvdole3bKfpGDmCaVTIfY24EJj
+     */
+
     #apiKey = '';
 
     /**
@@ -97,11 +110,7 @@ class MapManager {
     }
 }
 
-/**
- * TODO: 'updateLocation'
- * A function to retrieve the current location and update the page.
- * It is called once the page has been fully loaded.
- */
+
 function updateLocation() {
     LocationHelper.findLocation(function(helper) {
         var taggingLatitudeInput = document.getElementById("latitude_tagging");
@@ -111,16 +120,18 @@ function updateLocation() {
 
         taggingLatitudeInput.value = helper.latitude;
         taggingLongitudeInput.value = helper.longitude;
+
         discoveryLatitudeInput.value = helper.latitude;
         discoveryLongitudeInput.value = helper.longitude;
 
-        //console.log("Current location of User: Latitude: " + helper.latitude + ", Longitude: " + helper.longitude);
+        console.log("Current location of User: Latitude: " + helper.latitude + ", Longitude: " + helper.longitude);
 
         var mapManager = new MapManager("FtWHGJMvdole3bKfpGDmCaVTIfY24EJj");
         var mapImage = document.getElementById("mapView");
         mapImage.src = mapManager.getMapUrl(helper.latitude, helper.longitude, [], 17);
     });
 }
+
 // Wait for the page to fully load its DOM content, then call updateLocation
 document.addEventListener("DOMContentLoaded", () => {
     updateLocation();

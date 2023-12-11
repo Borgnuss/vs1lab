@@ -9,7 +9,7 @@ function drawMap(latitude, longitude) {
     var mapImage = document.getElementById("mapView");
     const tagsJson = mapImage.getAttribute('data-tagList');
     const tags = JSON.parse(tagsJson);
-    mapImage.src = mapManager.getMapUrl(latitude, longitude, tags, 13);
+    mapImage.src = mapManager.getMapUrl(latitude, longitude, tags, 16);
 }
 
 // Wait for the page to fully load its DOM content, then call updateLocation
